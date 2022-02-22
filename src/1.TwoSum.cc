@@ -5,23 +5,27 @@ class Solution
 public:
     vector<int> twoSum(vector<int> &nums, int target)
     {
-        map<int, int> index;
+        std::unordered_map<int, int> index;
+
+        std::vector<int> out;
 
         int size = nums.size();
         for (int i = 0; i < size; i++)
         {
-            map<int, int>::iterator x = index.find(target - nums[i]);
+            unordered_map<int, int>::iterator x = index.find(target - nums[i]);
             if (x == index.end())
             {
-                index[nums[i]] = i;
+                index.insert(std::make_pair(nums[i], i));
             }
             else
             {
-                return {i, x->second};
+                out.push_back(i);
+                out.push_back(x->second);
+                return out;
             }
         }
 
-        return {};
+        return out;
     }
 };
 
