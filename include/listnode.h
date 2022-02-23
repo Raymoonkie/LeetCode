@@ -30,6 +30,7 @@ struct ListNode
 
 void print_list(ListNode *head);
 bool is_same_list(ListNode *l1, ListNode *l2);
+std::string list_to_string(ListNode *head);
 
 class List
 {
