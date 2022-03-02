@@ -5,6 +5,12 @@ class Solution {
   int isValid(vector<int> &nums) { return 1; }
 };
 
+static const auto speedup = []() {
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+  return 0;
+}();
+
 TEST(isValid, isValid_1) {
   Solution s;
   vector<int> in = {1, 2, 3};
