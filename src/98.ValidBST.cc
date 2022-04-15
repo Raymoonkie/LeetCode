@@ -23,43 +23,20 @@ static const auto speedup = []() {
 
 TEST(ValidBST, ValidBST_1) {
   Solution s;
-  TreeNode* root = new TreeNode(2);
-  TreeNode* node1 = new TreeNode(1);
-  TreeNode* node2 = new TreeNode(3);
-  root->left = node1;
-  root->right = node2;
-
-  EXPECT_EQ(s.isValidBST(root), true);
+  Tree tree{2, 1, 3};
+  EXPECT_EQ(s.isValidBST(tree.root), true);
 }
 
 TEST(ValidBST, ValidBST_2) {
   Solution s;
-  TreeNode* root = new TreeNode(5);
-  TreeNode* node1 = new TreeNode(1);
-  TreeNode* node2 = new TreeNode(4);
-  TreeNode* node3 = new TreeNode(3);
-  TreeNode* node4 = new TreeNode(6);
-  root->left = node1;
-  root->right = node2;
-  node2->left = node3;
-  node2->right = node4;
-
-  EXPECT_EQ(s.isValidBST(root), false);
+  Tree tree{5, 1, 4, NULL, NULL, 3, 6};
+  EXPECT_EQ(s.isValidBST(tree.root), false);
 }
 
 TEST(ValidBST, ValidBST_3) {
   Solution s;
-  TreeNode* root = new TreeNode(5);
-  TreeNode* node1 = new TreeNode(4);
-  TreeNode* node2 = new TreeNode(6);
-  TreeNode* node3 = new TreeNode(3);
-  TreeNode* node4 = new TreeNode(7);
-  root->left = node1;
-  root->right = node2;
-  node2->left = node3;
-  node2->right = node4;
-
-  EXPECT_EQ(s.isValidBST(root), false);
+  Tree tree{5, 4, 6, NULL, NULL, 3, 7};
+  EXPECT_EQ(s.isValidBST(tree.root), false);
 }
 
 int main(int argc, char** argv) {
