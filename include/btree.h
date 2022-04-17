@@ -29,7 +29,8 @@ struct TreeNode
     int val;
     TreeNode *left;
     TreeNode *right;
-    TreeNode(int x = 0) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode * next;
+    TreeNode(int x = 0) : val(x), left(nullptr), right(nullptr), next(nullptr) {}
 };
 
 void print_tree(TreeNode *root);
