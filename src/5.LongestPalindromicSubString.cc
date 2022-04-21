@@ -11,8 +11,6 @@ class Solution {
     if (s.length() == 0) {
       return s;
     }
-    int lp = 0;
-    int rp = 0;
 
     int maxStart = 0;
     int maxLen = 0;
@@ -45,7 +43,7 @@ class Solution {
     }
     int len = s.length();
 
-    // dp[start][end] meanign weather it is a palindorm
+    // dp[start][end] meaning weather it is a palindorm
     bool dp[len][len];
     memset(dp, false, len * len * sizeof(bool));
 
