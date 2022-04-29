@@ -5,7 +5,7 @@ class Solution {
   int rob(vector<int> &nums) { return s3(nums); }
 
   int s1(vector<int> &nums, int i = 0) {
-    return i < size(nums) ? max(s1(nums, i + 1), nums[i] + s1(nums, i + 2)) : 0;
+    return i < nums.size() ? max(s1(nums, i + 1), nums[i] + s1(nums, i + 2)) : 0;
   }
 
   int s2(vector<int> &nums) {
