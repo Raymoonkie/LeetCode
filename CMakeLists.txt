@@ -3,6 +3,7 @@ project(LeetCode)
 # CMake version >= 3.10 due to gtest_discover_tests()
 # See https://cmake.org/cmake/help/git-stage/module/GoogleTest.html
 cmake_minimum_required(VERSION 3.10)
+set(CMAKE_CXX_STANDARD 17)
 
 enable_testing()
 find_package(Threads REQUIRED)
