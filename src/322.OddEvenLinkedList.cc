@@ -23,7 +23,7 @@ class Solution {
 
     p->next = evenHead->next;
 
-    delete evenHead;
+    // delete evenHead;
 
     return head;
   }
@@ -39,14 +39,14 @@ TEST(OddEvenLinkedList, OddEvenLinkedList_1) {
   Solution s;
   List l1{1, 2, 3, 4, 5};
   List l2{1, 3, 5, 2, 4};
-  EXPECT_EQ(s.oddEvenList(l1.head), l2.head);
+  EXPECT_EQ(is_same_list(s.oddEvenList(l1.head), l2.head), true);
 }
 
 TEST(OddEvenLinkedList, OddEvenLinkedList_2) {
   Solution s;
   List l1{2, 1, 3, 5, 6, 4, 7};
   List l2{2, 3, 6, 7, 1, 5, 4};
-  EXPECT_EQ(s.oddEvenList(l1.head), l2.head);
+  EXPECT_EQ(is_same_list(s.oddEvenList(l1.head), l2.head), true);
 }
 
 int main(int argc, char** argv) {
