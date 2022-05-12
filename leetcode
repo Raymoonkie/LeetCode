@@ -26,7 +26,7 @@ then
    mkdir build 
 fi
 
-XXX=`ls src/ | grep $1 | awk -F '.cc' '{print $1}'`
+XXX=`ls src/ | grep  -E "^$1\." | awk -F '.cc' '{print $1}'`
 
 cd build && cmake ..  && make $XXX -j8 && cd src 
 
