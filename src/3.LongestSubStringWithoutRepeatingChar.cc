@@ -2,7 +2,9 @@
 
 class Solution {
  public:
-  int lengthOfLongestSubstring(string s) {
+  int lengthOfLongestSubstring(string s) { return s2(s); }
+
+  int s1(string s) {
     if (s.length() < 2) {
       return s.length();
     }
@@ -17,6 +19,23 @@ class Solution {
     }
 
     return maxLen;
+  }
+
+  int s2(string s) {
+    vector<int> map(128, 0);
+    int begin = 0, end = 0;
+    int len = 0;
+    // when counter > 1, means has duplicate
+    int counter = 0;
+    while (end < s.size()) {
+      if (map[s[end++]]++ > 0) counter++;
+      while (counter > 0) {
+        if (map[s[begin++]]-- > 1) counter--;
+      }
+      len = max(len, end - begin);
+    }
+
+    return len;
   }
 };
 
